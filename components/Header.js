@@ -15,6 +15,7 @@ class Header extends HTMLElement {
         </ul>
 
         <div class="col-md-3 text-end">
+          <a href="/add-book" class="btn btn-outline-info me-2">+book</a>
           <a href="/login" class="btn btn-outline-primary me-2">Login</a>
           <a href="/register" class="btn btn-primary">Register</a>
         </div>

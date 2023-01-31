@@ -22,6 +22,9 @@ switch ($request) {
   case '/profile' :
     require __DIR__ . '/profile.html';
     break;
+  case '/add-book' :
+    require __DIR__ . '/add-book.html';
+    break;
   default:
     http_response_code(404);
     require __DIR__ . '/404.html';
