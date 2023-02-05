@@ -20,7 +20,7 @@ switch ($request) {
     require __DIR__ . '/register.html';
     break;
   case '/profile' :
-    require __DIR__ . '/profile.html';
+    require __DIR__ . '/profile.php';
     break;
   case '/add-book' :
     require __DIR__ . '/add-book.html';
