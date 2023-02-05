@@ -26,10 +26,9 @@ $sql = /** @lang text */
   "INSERT INTO `users` (`name`, `email`, `password`, `created`) VALUES ('$name', '$email', '$hashedPassword', '$date')";
 $query = mysqli_query($connect, $sql);
 if($query){
-  session_start();
-  $_SESSION['logged_in']='true';
-  $_SESSION['logged_email']=$email;
-  header("Location: profile.html");
+  setcookie('logged_in', true, time()+60*60*24*30);
+  setcookie('logged_email', $email, time()+60*60*24*30);
+  header("Location: /profile");
   die();
 }
 else{
