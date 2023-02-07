@@ -3,13 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Book Store Your Account</title>
-  <script src="components/UnLoggedHeader.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./index.css" />    
+  <link rel="shortcut icon" href="icon.svg" type="image/x-icon" />
+
 </head>
 <body>
   <div class="container">
-    <un-logged-main-header></un-logged-main-header>
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
+        >
+          <img src="icon.svg" width="48" />
+        </a>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/" class="nav-link px-3 link-dark">Home</a></li>
+          <li><a href="/shop" class="nav-link px-3 link-dark">Shop</a></li>
+          <li><a href="/about" class="nav-link px-3 link-dark">About</a></li>
+        </ul>
+
+        <?php
+        if (!isset($_COOKIE['logged_in']) or !$_COOKIE['logged_in']){
+          echo '
+          <div class="col-lg-4 text-end">
+            <a href="/add-book" class="btn btn-outline-info me-2">Add book</a>
+            <a href="/login" class="btn btn-outline-primary me-2">Login</a>
+            <a href="/register" class="btn btn-primary">Register</a>
+          </div>';
+        }
+        else{
+          echo '<div class="col-lg-4 text-end">
+            <a href="/profile" class="btn btn-dark me-2">Profile</a>
+          </div>';
+        }
+
+        ?>
+      </header>
 
     <?php
       if (!isset($_COOKIE['logged_in']) or !$_COOKIE['logged_in']){

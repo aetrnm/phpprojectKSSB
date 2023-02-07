@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <title>Book Store About</title>
-  <script src="components/UnLoggedHeader.js"></script>
-</head>
-<body>
-  <div class="container">
-    <un-logged-main-header></un-logged-main-header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="shortcut icon" href="icon.svg" type="image/x-icon" />
+
+    <title>Book Store About</title>
+  </head>
+  <body>
+    <div class="container">
+      <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
+        >
+          <img src="icon.svg" width="48" />
+        </a>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/" class="nav-link px-3 link-dark">Home</a></li>
+          <li><a href="/shop" class="nav-link px-3 link-dark">Shop</a></li>
+          <li><a href="/about" class="nav-link px-3 link-dark">About</a></li>
+        </ul>
+
+        <div class="col-lg-4 text-end">
+          <a href="/add-book" class="btn btn-outline-info me-2">Add book</a>
+          <a href="/login" class="btn btn-outline-primary me-2">Login</a>
+          <a href="/register" class="btn btn-primary">Register</a>
+        </div>
+      </header>
+
       <div class="row mb-4">
         <h1>Our team</h1>
-          <div class="col-lg-12">
-            <p class="font-italic text-muted">Eline, Raphael and Oleh are a great team working in an online bookshop. Eline is the manager of the shop, she is responsible for keeping track of orders and making sure that the customer's needs are met. Raphael is the webmaster, he is responsible for the website design and making sure that the website is up and running properly. Oleh is the bookkeeper, he is responsible for keeping track of the finances of the shop, making sure that everything is accounted for and that the shop is financially secure. Together, they make sure that the online book shop runs smoothly and efficiently.</p>
-          </div>
+        <div class="col-lg-12">
+          <p class="font-italic text-muted">
+            Eline, Raphael and Oleh are a great team working in an online
+            bookshop. Eline is the manager of the shop, she is responsible for
+            keeping track of orders and making sure that the customer's needs
+            are met. Raphael is the webmaster, he is responsible for the website
+            design and making sure that the website is up and running properly.
+            Oleh is the bookkeeper, he is responsible for keeping track of the
+            finances of the shop, making sure that everything is accounted for
+            and that the shop is financially secure. Together, they make sure
+            that the online book shop runs smoothly and efficiently.
+          </p>
+        </div>
       </div>
 
       <div class="row text-center">
-        <!-- Team item-->
+        <!-- Eline -->
         <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://cdn-icons-png.flaticon.com/512/2118/2118629.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-            <h5 class="mb-0">Eline Ducrey</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-            <ul class="social mb-0 list-inline mt-3">
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-facebook-f"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-twitter"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-instagram"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-linkedin"></i></a></li>
-            </ul>
+          <div class="bg-white rounded shadow-sm py-5 px-4">
+            <img src="eline.svg" width="100" />
+            <h5 class="mb-0">Eline Ducrey</h5>
+            <span class="small text-uppercase text-muted">CEO - Founder</span>
           </div>
         </div>
         <!-- End-->
 
-        <!-- Team item-->
+        <!-- Raphael-->
         <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-            <h5 class="mb-0">Raphael Eyer</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-            <ul class="social mb-0 list-inline mt-3">
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-facebook-f"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-twitter"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-instagram"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-linkedin"></i></a></li>
-            </ul>
+          <div class="bg-white rounded shadow-sm py-5 px-4">
+            <img src="raphael.svg" width="100" />
+            <h5 class="mb-0">Raphael Eyer</h5>
+            <span class="small text-uppercase text-muted">CEO - Founder</span>
           </div>
         </div>
         <!-- End-->
 
-        <!-- Team item-->
+        <!-- Oleh -->
         <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://cdn-icons-png.flaticon.com/512/3006/3006880.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-            <h5 class="mb-0">Oleh Hnatkovskyi</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-            <ul class="social mb-0 list-inline mt-3">
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-facebook-f"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-twitter"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-instagram"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-lg fa-brands fa-linkedin"></i></a></li>
-            </ul>
+          <div class="bg-white rounded shadow-sm py-5 px-4">
+            <img src="oleh.svg" width="100" />
+            <h5 class="mb-0">Oleh Hnatkovskyi</h5>
+            <span class="small text-uppercase text-muted">CEO - Founder</span>
           </div>
         </div>
         <!-- End-->
-
       </div>
     </div>
-</body>
+  </body>
 </html>
