@@ -26,26 +26,31 @@
           href="/"
           class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         >
-          <img src="icon.svg" width="48" />
+          <img src="icon.svg" width="48"  alt="Website icon"/>
         </a>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/" class="nav-link px-3 link-dark">Home</a></li>
           <li><a href="/shop" class="nav-link px-3 link-dark">Shop</a></li>
           <li><a href="/about" class="nav-link px-3 link-dark">About</a></li>
+          <li>
+            <a href="/guestbook" class="nav-link px-3 link-dark">Guestbook</a>
+          </li>
         </ul>
 
         <?php
         if (!isset($_COOKIE['logged_in']) or !$_COOKIE['logged_in']){
-          echo '
+          echo /** @lang text */
+          '
           <div class="col-lg-4 text-end">
-            <a href="/add-book" class="btn btn-outline-info me-2">Add book</a>
             <a href="/login" class="btn btn-outline-primary me-2">Login</a>
             <a href="/register" class="btn btn-primary">Register</a>
           </div>';
         }
         else{
-          echo '<div class="col-lg-4 text-end">
+          echo /** @lang text */
+          '<div class="col-lg-4 text-end">
+            <a href="/add-book" class="btn btn-outline-info me-2">Add book</a>
             <a href="/profile" class="btn btn-dark me-2">Profile</a>
           </div>';
         }
@@ -62,9 +67,9 @@
         🍪 This website uses cookies to ensure you get the best experience on
         our website.
         <a href="https://www.cookiesandyou.com/" target="blank">Learn more</a>
-        <button type="submit" class="btn btn-primary btn-sm ms-3">
-          I Got It
-        </button>
+<!--        <button type="submit" class="btn btn-primary btn-sm ms-3">-->
+<!--          I Got It-->
+<!--        </button>-->
       </div>
       <!-- End of Cookie Banner -->
 
@@ -121,7 +126,7 @@
             </div>
           </div>
 
-          <img src="books.svg" srcset="books.svg" class="m-auto w-25" />
+          <img src="books.svg" srcset="books.svg" class="m-auto w-25"  alt="Books sketch"/>
         </div>
       </div>
     </div>
