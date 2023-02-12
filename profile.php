@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Book Store Your Account</title>
+  <title>Book Store Profile</title>
   <link rel="stylesheet" href="./index.css" />    
   <link rel="shortcut icon" href="icon.svg" type="image/x-icon" />
 
@@ -16,26 +16,31 @@
           href="/"
           class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         >
-          <img src="icon.svg" width="48" />
+          <img src="icon.svg" width="48"  alt="Website icon"/>
         </a>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/" class="nav-link px-3 link-dark">Home</a></li>
           <li><a href="/shop" class="nav-link px-3 link-dark">Shop</a></li>
           <li><a href="/about" class="nav-link px-3 link-dark">About</a></li>
+          <li>
+            <a href="/guestbook" class="nav-link px-3 link-dark">Guestbook</a>
+          </li>
         </ul>
 
         <?php
         if (!isset($_COOKIE['logged_in']) or !$_COOKIE['logged_in']){
-          echo '
+          echo /** @lang text */
+          '
           <div class="col-lg-4 text-end">
-            <a href="/add-book" class="btn btn-outline-info me-2">Add book</a>
             <a href="/login" class="btn btn-outline-primary me-2">Login</a>
             <a href="/register" class="btn btn-primary">Register</a>
           </div>';
         }
         else{
-          echo '<div class="col-lg-4 text-end">
+          echo /** @lang text */
+          '<div class="col-lg-4 text-end">
+            <a href="/add-book" class="btn btn-outline-info me-2">Add book</a>
             <a href="/profile" class="btn btn-dark me-2">Profile</a>
           </div>';
         }
@@ -43,10 +48,13 @@
         ?>
       </header>
 
+    <h1>Profile</h1>
+
+
     <?php
       if (!isset($_COOKIE['logged_in']) or !$_COOKIE['logged_in']){
         echo /** @lang text */
-        '<h1>You must log in or register to access this page </h1>';
+        '<h2>You must log in or register to access this page </h2>';
         die();
       }
 
@@ -58,10 +66,11 @@
       $row = mysqli_fetch_array($query);
 
       $name = $row['name'];
-      echo "<h1>Welcome $name</h1>";
+      echo /** @lang text */
+      "<h2>Welcome $name</h2>";
     ?>
 
-    <form action="./logout.php" method="POST">
+    <form action="./logout-script.php" method="POST">
       <input type="submit" class="btn btn-danger" value="Log out">
     </form>
   </div>
