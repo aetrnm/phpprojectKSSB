@@ -1,13 +1,14 @@
 <?php
 
-if($_SERVER['REQUEST_METHOD'] != 'POST') {
+if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+  return;
+}
+
+if (!isset($_POST['feedback'])) {
   return;
 }
 
 $connect = mysqli_connect('localhost', 'root', '', 'bookstore') or die('Connection Failure' . mysqli_connect_error());
-if(!isset($_POST['feedback'])) {
-  return;
-}
 
 $feedback = $_POST['feedback'];
 $date = date("Y/m/d");
@@ -24,7 +25,7 @@ $sql = /** @lang text */
   "INSERT INTO `reviews` (`content`, `author`, `created`) VALUES ('$feedback', '$name', '$date')";
 $query = mysqli_query($connect, $sql);
 
-if($query){
+if ($query) {
   header("Location: /guestbook");
   die();
 }
