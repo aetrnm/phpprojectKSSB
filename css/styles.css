@@ -1,0 +1,282 @@
+@charset "UTF-8";
+/* Authors Oleh Hnatkovskyi, Eline Ducrey, Raphael Eyer */
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline-style: none;
+}
+
+:root {
+    scroll-behavior: smooth;
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --black-color: #212529;
+}
+
+.container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: calc(var(--gutter-x) * 0.5);
+    padding-left: calc(var(--gutter-x) * 0.5);
+    --gutter-x: 1.5rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.navbar {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    list-style: none;
+}
+
+.navbar-link {
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: block;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.navbar-link:focus {
+    transition: ease 50ms;
+    transform: scale(1.2);
+}
+
+.navbar-link:hover {
+    transition: ease 50ms;
+    transform: scale(1.2);
+}
+
+.navbar-buttons {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: right;
+}
+
+.button {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    background-color: transparent;
+}
+
+.button-large {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+}
+
+.button-bluish {
+    color: var(--light-color);
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+.button-bluish:active {
+    color: var(--light-color);
+    border-color: #0a53be;
+    background-color: #0a58ca;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.button-bluish:hover {
+    color: var(--light-color);
+    border-color: #0a58ca;
+    background-color: #0b5ed7;
+}
+
+.button-bluish:focus {
+    box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
+}
+
+.button-greenish {
+    color: var(--light-color);
+    border-color: var(--success-color);
+    background-color: var(--success-color);
+}
+
+.button-greenish:active {
+    color: var(--light-color);
+    border-color: #13653f;
+    background-color: #146c43;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.button-greenish:hover {
+    color: var(--light-color);
+    border-color: #146c43;
+    background-color: #157347;
+}
+
+.button-greenish:focus {
+    box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, 0.5);
+}
+
+.button-dark {
+    color: #fff;
+    border-color: var(--black-color);
+    background-color: var(--black-color);
+}
+
+.button-dark:active {
+    color: #fff;
+    border-color: #373b3e;
+    background-color: #4d5154;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.button-dark:hover {
+    color: #fff;
+    border-color: #373b3e;
+    background-color: #424649;
+}
+
+.button-dark:focus {
+    box-shadow: 0 0 0 0.25rem rgba(66, 70, 73, 0.5);
+}
+
+.button-reddish {
+    color: #fff;
+    border-color: var(--danger-color);
+    background-color: var(--danger-color);
+}
+
+.button-reddish:active {
+    color: #fff;
+    border-color: #a52834;
+    background-color: #b02a37;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.button-reddish:hover {
+    color: #fff;
+    border-color: #b02a37;
+    background-color: #bb2d3b;
+}
+
+.button-reddish:focus {
+    box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--secondary-color);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1 0 0;
+}
+
+.col-100 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.col-50-50 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.col-33-33-33 {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+.float-right {
+    float: right;
+}
+
+.mt-15 {
+    margin-top: 1.5rem;
+}
+
+.mb-05 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-15 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem !important;
+}
+
+.ml-05 {
+    margin-left: 0.5rem;
+}
+
+.mr-05 {
+    margin-right: 0.5rem;
+}
+
+.mr-15 {
+    margin-right: 1.5rem;
+}
+
+.p-15 {
+    padding: 1.5rem;
+}

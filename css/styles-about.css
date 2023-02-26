@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/* Authors Oleh Hnatkovskyi, Eline Ducrey, Raphael Eyer */
+
+.member-card {
+    padding       : 3rem 1.5rem;
+    text-align    : center;
+    border-radius : 0.375rem;
+    box-shadow    : 0 0.125rem 0.5rem rgba(33, 37, 41, 0.1);
+}
