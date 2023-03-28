@@ -7,7 +7,7 @@ if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['password
     return;
 }
 
-$connect = mysqli_connect('localhost', 'root', '', 'bookstore') or die('Connection Failure' . mysqli_connect_error());
+$connect = mysqli_connect('kssb.ch', 'db.user.g14f', 'dUs<8+SBrb', 'db.f1') or die('Connection Failure' . mysqli_connect_error());
 
 $name = $_POST['name'];
 $email = $_POST['email'];

@@ -7,13 +7,25 @@ if (!isset($_POST['book_id'])) {
     return;
 }
 
-$book_id = $_POST['book_id'];
+$bookID = $_POST['book_id'];
 
 session_start();
 if (!isset($_SESSION["cart"])) {
-    $_SESSION["cart"] = [$book_id];
+    $cartObject = new stdClass();
+    $cartObject->id = $bookID;
+    $cartObject->count = 1;
+    $_SESSION["cart"] = [$cartObject];
 } else {
-    $_SESSION["cart"] = [$book_id, ...$_SESSION["cart"]];
+    for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
+        if ($_SESSION["cart"][$i]->id === $bookID) {
+            $_SESSION["cart"][$i]->count += 1;
+            header("Location: /shop");
+            die();
+        }
+    }
+    $cartObject = new stdClass();
+    $cartObject->id = $bookID;
+    $cartObject->count = 1;
+    $_SESSION["cart"] = [$cartObject, ...$_SESSION["cart"]];
 }
-
 header("Location: /shop");

@@ -23,9 +23,9 @@
         <ul class="navbar">
             <li><a href="/" class="navbar-link">Home</a></li>
             <li><a href="/shop" class="navbar-link">Shop</a></li>
-            <li><a href="/about" class="navbar-link">About</a></li>
+            <li><a href="/about" class="navbar-link">Wir über uns</a></li>
             <li>
-                <a href="/guestbook" class="navbar-link">Guestbook</a>
+                <a href="/guestbook" class="navbar-link">Gästebuch</a>
             </li>
         </ul>
 
@@ -40,9 +40,9 @@
         } else {
             echo /** @lang text */
             '<div class="navbar-buttons">
-            <a href="/cart" class="button button-dark mr-05">My cart</a>
-            <a href="/add-book" class="button button-dark mr-05">Add book</a>
-            <a href="/profile" class="button button-dark">Profile</a>
+            <a href="/cart" class="button button-dark mr-05">Mein Warenkorb</a>
+            <a href="/add-book" class="button button-dark mr-05">Buch hinzufügen</a>
+            <a href="/profile" class="button button-dark">Profil</a>
           </div>';
         }
         ?>
@@ -52,7 +52,7 @@
         <h1 class="mb-1">Shop</h1>
         <div class="row">
             <?php
-            $connect = mysqli_connect('localhost', 'root', '', 'bookstore') or die('Connection Failure' . mysqli_connect_error());
+            $connect = mysqli_connect('kssb.ch', 'db.user.g14f', 'dUs<8+SBrb', 'db.f1') or die('Connection Failure' . mysqli_connect_error());
             $sql = /** @lang text */
                 "SELECT id, title, author, coverLink, price, description, year FROM books";
             $query = mysqli_query($connect, $sql);
@@ -94,7 +94,7 @@
                           </p>
                           <form action=\"./scripts/add-book-to-cart-script.php\" method=\"POST\">
                             <input type=\"hidden\" name=\"book_id\" value=\"$id\">
-                            <input type=\"submit\" class=\"button button-bluish mt-15\" value=\"Add to my cart\"/>
+                            <input type=\"submit\" class=\"button button-bluish mt-15\" value=\"Zum Warenkorb hinzufügen\"/>
                           </form>
                         </div>
                       </div>

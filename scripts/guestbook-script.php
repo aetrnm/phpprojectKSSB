@@ -1,31 +1,31 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-  return;
+    return;
 }
 
 if (!isset($_POST['feedback'])) {
-  return;
+    return;
 }
 
-$connect = mysqli_connect('localhost', 'root', '', 'bookstore') or die('Connection Failure' . mysqli_connect_error());
+$connect = mysqli_connect('kssb.ch', 'db.user.g14f', 'dUs<8+SBrb', 'db.f1') or die('Connection Failure' . mysqli_connect_error());
 
 $feedback = $_POST['feedback'];
 $date = date("Y/m/d");
 
 $logged_email = $_COOKIE['logged_email'];
 $sql = /** @lang text */
-  "SELECT name FROM users where email='$logged_email'";
+    "SELECT name FROM users where email='$logged_email'";
 $query = mysqli_query($connect, $sql);
 $row = mysqli_fetch_array($query);
 
 $name = $row['name'];
 
 $sql = /** @lang text */
-  "INSERT INTO `reviews` (`content`, `author`, `created`) VALUES ('$feedback', '$name', '$date')";
+    "INSERT INTO `reviews` (`content`, `author`, `created`) VALUES ('$feedback', '$name', '$date')";
 $query = mysqli_query($connect, $sql);
 
 if ($query) {
-  header("Location: /guestbook");
-  die();
+    header("Location: /guestbook");
+    die();
 }

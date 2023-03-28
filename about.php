@@ -24,9 +24,9 @@
         <ul class="navbar">
             <li><a href="/" class="navbar-link">Home</a></li>
             <li><a href="/shop" class="navbar-link">Shop</a></li>
-            <li><a href="/about" class="navbar-link">About</a></li>
+            <li><a href="/about" class="navbar-link">Wir über uns</a></li>
             <li>
-                <a href="/guestbook" class="navbar-link">Guestbook</a>
+                <a href="/guestbook" class="navbar-link">Gästebuch</a>
             </li>
         </ul>
 
@@ -41,9 +41,9 @@
         } else {
             echo /** @lang text */
             '<div class="navbar-buttons">
-            <a href="/cart" class="button button-dark mr-05">My cart</a>
-            <a href="/add-book" class="button button-dark mr-05">Add book</a>
-            <a href="/profile" class="button button-dark">Profile</a>
+            <a href="/cart" class="button button-dark mr-05">Mein Warenkorb</a>
+            <a href="/add-book" class="button button-dark mr-05">Buch hinzufügen</a>
+            <a href="/profile" class="button button-dark">Profil</a>
           </div>';
         }
         ?>
@@ -51,18 +51,16 @@
 
     <div class="container">
         <div class="row mb-15">
-            <h1 class="mb-1">Our team</h1>
+            <h1 class="mb-1">Unser Team</h1>
             <div class="col-100">
                 <p class="text-muted">
-                    Eline, Raphael and Oleh are a great team working in an online
-                    bookshop. Eline is the manager of the shop, she is responsible for
-                    keeping track of orders and making sure that the customer's needs
-                    are met. Raphael is the webmaster, he is responsible for the website
-                    design and making sure that the website is up and running properly.
-                    Oleh is the bookkeeper, he is responsible for keeping track of the
-                    finances of the shop, making sure that everything is accounted for
-                    and that the shop is financially secure. Together, they make sure
-                    that the online book shop runs smoothly and efficiently.
+                    Eline, Raphael und Oleh sind ein tolles Team, das in einem Online-Buchladen arbeitet. Eline ist die
+                    Managerin des Ladens, sie ist dafür verantwortlich, die Bestellungen im Auge zu behalten und dafür
+                    zu sorgen, dass die Bedürfnisse der Kunden erfüllt werden. Raphael ist der Webmaster, er ist für die
+                    Gestaltung der Website zuständig und sorgt dafür, dass die Website ordnungsgemäß funktioniert. Oleh
+                    ist der Buchhalter, er ist für die Finanzen des Ladens zuständig und sorgt dafür, dass alles
+                    verbucht wird und der Laden finanziell abgesichert ist. Gemeinsam sorgen sie dafür, dass der
+                    Online-Buchladen reibungslos und effizient läuft.
                 </p>
             </div>
         </div>
@@ -73,7 +71,7 @@
                 <div class="member-card">
                     <img src="eline.svg" width="100" alt="Eline's selfie"/>
                     <h5 class="mb-0">Eline Ducrey</h5>
-                    <span class="small text-uppercase text-muted">CEO - Founder</span>
+                    <span class="small text-uppercase text-muted">Content Manager</span>
                 </div>
             </div>
             <!-- End-->
@@ -83,7 +81,7 @@
                 <div class="member-card">
                     <img src="raphael.svg" width="100" alt="Raphael's selfie"/>
                     <h5 class="mb-0">Raphael Eyer</h5>
-                    <span class="small text-uppercase text-muted">CEO - Founder</span>
+                    <span class="small text-uppercase text-muted">Website-Entwickler/Designer</span>
                 </div>
             </div>
             <!-- End-->
@@ -93,7 +91,7 @@
                 <div class="member-card">
                     <img src="oleh.svg" width="100" alt="Oleh's selfie"/>
                     <h5 class="mb-0">Oleh Hnatkovskyi</h5>
-                    <span class="small text-uppercase text-muted">CEO - Founder</span>
+                    <span class="small text-uppercase text-muted">Kundenbetreuer</span>
                 </div>
             </div>
             <!-- End-->

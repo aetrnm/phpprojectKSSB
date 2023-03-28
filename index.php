@@ -1,134 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css" />
-    <link rel="shortcut icon" href="icon.svg" type="image/x-icon" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/styles-cookies-banner.css"/>
+    <link rel="stylesheet" href="css/styles-form.css"/>
+    <link rel="stylesheet" href="css/styles-home.css"/>
+    <!--    <link rel="stylesheet" href="css/index.css"/>-->
+    <link rel="shortcut icon" href="icon.svg" type="image/x-icon"/>
     <title>Book Store</title>
-    <style>
-      #cb-cookie-banner {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        border-radius: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
-      >
+</head>
+<body>
+<div class="container">
+    <header
+            class="header"
+    >
         <a
-          href="/"
-          class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
+                href="/"
+                class="header-icon"
         >
-          <img src="icon.svg" width="48"  alt="Website icon"/>
+            <img src="icon.svg" width="48" alt="Website icon"/>
         </a>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-3 link-dark">Home</a></li>
-          <li><a href="/shop" class="nav-link px-3 link-dark">Shop</a></li>
-          <li><a href="/about" class="nav-link px-3 link-dark">About</a></li>
-          <li>
-            <a href="/guestbook" class="nav-link px-3 link-dark">Guestbook</a>
-          </li>
+        <ul class="navbar">
+            <li><a href="/" class="navbar-link">Home</a></li>
+            <li><a href="/shop" class="navbar-link">Shop</a></li>
+            <li><a href="/about" class="navbar-link">Wir über uns</a></li>
+            <li>
+                <a href="/guestbook" class="navbar-link">Gästebuch</a>
+            </li>
         </ul>
 
         <?php
-        if (!isset($_COOKIE['logged_in']) or !$_COOKIE['logged_in']){
-          echo /** @lang text */
-          '
-          <div class="col-lg-4 text-end">
-            <a href="/login" class="btn btn-outline-primary me-2">Login</a>
-            <a href="/register" class="btn btn-primary">Register</a>
+        if (!isset($_COOKIE['logged_in']) or !$_COOKIE['logged_in']) {
+            echo /** @lang text */
+            '
+          <div class="navbar-buttons">
+            <a href="/login" class="button button-bluish mr-05">Login</a>
+            <a href="/register" class="button button-bluish">Register</a>
           </div>';
-        }
-        else{
-          echo /** @lang text */
-          '<div class="col-lg-4 text-end">
-            <a href="/add-book" class="btn btn-outline-info me-2">Add book</a>
-            <a href="/profile" class="btn btn-dark me-2">Profile</a>
+        } else {
+            echo /** @lang text */
+            '<div class="navbar-buttons">
+            <a href="/cart" class="button button-dark mr-05">Mein Warenkorb</a>
+            <a href="/add-book" class="button button-dark mr-05">Buch hinzufügen</a>
+            <a href="/profile" class="button button-dark">Profil</a>
           </div>';
         }
         ?>
-        
-      </header>
+    </header>
 
-      <!-- Cookie Banner -->
-      <div
-        id="cb-cookie-banner"
-        class="alert alert-dark text-center mb-0"
-        role="alert"
-      >
+    <!-- Cookie Banner -->
+    <div
+            id="cookie-banner"
+            class="cookie-banner text-center text-muted"
+    >
         🍪 This website uses cookies to ensure you get the best experience on
         our website.
         <a href="https://www.cookiesandyou.com/" target="blank">Learn more</a>
-<!--        <button type="submit" class="btn btn-primary btn-sm ms-3">-->
-<!--          I Got It-->
-<!--        </button>-->
-      </div>
-      <!-- End of Cookie Banner -->
-
-      <!--      <div class="container col-xxl-8 px-4 py-5">-->
-      <!--          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">-->
-      <!--              <div class="col-10 col-sm-8 col-lg-6">-->
-      <!--                  <div class="carousel slide" data-bs-ride="carousel" data-bs-interval="500">-->
-      <!--                      <div class="carousel-inner">-->
-      <!--                          <div class="carousel-item active">-->
-      <!--                              <img src="https://covers.openlibrary.org/b/id/8587804-L.jpg" class="d-block w-50" alt="">-->
-      <!--                          </div>-->
-      <!--                          <div class="carousel-item">-->
-      <!--                              <img src="https://covers.openlibrary.org/b/id/8739161-L.jpg" class="d-block w-50" alt="">-->
-      <!--                          </div>-->
-      <!--                          <div class="carousel-item">-->
-      <!--                              <img src="https://covers.openlibrary.org/b/id/12001885-L.jpg" class="d-block w-50" alt="">-->
-      <!--                          </div>-->
-      <!--                      </div>-->
-      <!--                  </div>-->
-      <!--              </div>-->
-      <!--              <div class="col-lg-6">-->
-      <!--                  <h1 class="display-5 fw-bold lh-1 mb-3">Buy and sell your textbooks for the best price</h1>-->
-      <!--                  <p class="lead">From applied literature to educational resources, we have a lot of textbooks to offer you. We provide only the best books for rent</p>-->
-      <!--                  <div class="d-grid gap-2 d-md-flex justify-content-md-start">-->
-      <!--                      <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Go to the shop</button>-->
-      <!--                  </div>-->
-      <!--              </div>-->
-      <!--          </div>-->
-      <!--      </div>-->
-
-      <div class="container my-5">
-        <div
-          class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border"
-        >
-          <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-            <h1 class="display-4 fw-bold lh-1">
-              Buy and sell your textbooks for the best price
-            </h1>
-            <p class="lead">
-              From applied literature to educational resources, we have a lot of
-              textbooks to offer you. We provide only the best books for rent.
-            </p>
-            <div
-              class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
-            >
-              <a href="/shop"
-                ><button
-                  type="button"
-                  class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"
-                >
-                  Go to the shop
-                </button></a
-              >
-            </div>
-          </div>
-
-          <img src="books.svg" srcset="books.svg" class="m-auto w-25"  alt="Books sketch"/>
-        </div>
-      </div>
     </div>
-  </body>
+    <!-- End of Cookie Banner -->
+
+    <div class="text-center mb-3">
+        <img src="books.svg" srcset="books.svg" alt="Books sketch" width="200">
+        <h1>Kaufen und verkaufen Sie Ihre Bücher zum besten Preis</h1>
+        <div class="col-16-16-16-16-16-16 margin-auto">
+            <p class="text-muted mb-1">Von angewandter Literatur bis hin zu Lehrmitteln haben wir Ihnen eine Vielzahl
+                von Lehrbüchern zu bieten.</p>
+            <div class="d-flex justify-content-center">
+                <a href="/shop" class="button button-bluish button-large"
+                >
+                    Go to the shop
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-3">
+        <div
+                class="row text-center bordered-form p-15"
+        >
+            <div class="col-50-50">
+                <h1 class="mb-1">
+                    Registrieren Sie sich oder melden Sie sich an und nutzen Sie das volle Potenzial unserer Website
+                </h1>
+                <p class="text-muted mb-15">
+                    Mit einem registrierten Konto können Sie Ihre Bestellungen leicht verfolgen, Ihre Lieblingsbücher
+                    speichern und Benachrichtigungen über Neuerscheinungen erhalten. Die Registrierung ist schnell,
+                    einfach und völlig kostenlos.
+                </p>
+                <div>
+                    <a href="/login" class="button button-bluish button-large">
+                        Login
+                    </a>
+                    <a href="/register" class="button button-bluish button-large">
+                        Register
+                    </a>
+                </div>
+            </div>
+
+            <img src="book-delivery.svg" srcset="book-delivery.svg" class="margin-auto" width="300" alt="Books sketch"/>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-50-50 text-center">
+                <h1 class="mb-1">Melden Sie sich für unseren Newsletter an</h1>
+                <p class="text-muted">Unser Newsletter ist der perfekte Weg, um neue Titel zu entdecken, Neuigkeiten aus
+                    der Welt der Bücher zu erfahren und exklusive Rabatte auf Ihre Lieblingsbücher zu erhalten.
+                    Verpassen Sie nicht unsere neuesten Angebote und Aktionen - melden Sie sich jetzt an und tauchen Sie
+                    ein in die wunderbare Welt der Bücher</p>
+            </div>
+            <div class="margin-auto">
+                <form action="./scripts/email-subscription-script.php" method="POST" class="p-15 bordered-form">
+                    <div class="mb-1">
+                        <label for="email">E-Mail Adresse</label>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <button class="button button-large button-bluish" style="width: 100%" type="submit">Anmelden
+                    </button>
+                    <hr class="mt-15 mb-15"/>
+                    <small class="text-muted">Wenn Sie auf Anmelden klicken, stimmen Sie den Nutzungsbedingungen
+                        zu..</small>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
 </html>

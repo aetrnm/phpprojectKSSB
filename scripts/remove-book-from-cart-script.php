@@ -10,13 +10,14 @@ if (!isset($_POST['book_id'])) {
 
 $book_id = $_POST['book_id'];
 
-function delArrValues(array $arr, array $remove)
+function filterById($obj, $id)
 {
-    return array_filter($arr, fn($e) => !in_array($e, $remove));
+    return $obj->id !== $id;
 }
 
 session_start();
-$_SESSION["cart"] = delArrValues($_SESSION["cart"], [$book_id]);
-
+$_SESSION["cart"] = array_values(array_filter($_SESSION["cart"], function ($obj) use ($book_id) {
+    return filterById($obj, $book_id);
+}));
 
 header("Location: /cart");

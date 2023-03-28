@@ -245,8 +245,20 @@
     float: right;
 }
 
+.align-items-center {
+    align-items: center;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
 .mt-15 {
     margin-top: 1.5rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
 }
 
 .mb-05 {
@@ -262,7 +274,7 @@
 }
 
 .mb-3 {
-    margin-bottom: 3rem !important;
+    margin-bottom: 3rem;
 }
 
 .ml-05 {

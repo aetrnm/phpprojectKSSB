@@ -23,9 +23,9 @@
         <ul class="navbar">
             <li><a href="/" class="navbar-link">Home</a></li>
             <li><a href="/shop" class="navbar-link">Shop</a></li>
-            <li><a href="/about" class="navbar-link">About</a></li>
+            <li><a href="/about" class="navbar-link">Wir über uns</a></li>
             <li>
-                <a href="/guestbook" class="navbar-link">Guestbook</a>
+                <a href="/guestbook" class="navbar-link">Gästebuch</a>
             </li>
         </ul>
 
@@ -40,18 +40,18 @@
         } else {
             echo /** @lang text */
             '<div class="navbar-buttons">
-            <a href="/cart" class="button button-dark mr-05">My cart</a>
-            <a href="/add-book" class="button button-dark mr-05">Add book</a>
-            <a href="/profile" class="button button-dark">Profile</a>
+            <a href="/cart" class="button button-dark mr-05">Mein Warenkorb</a>
+            <a href="/add-book" class="button button-dark mr-05">Buch hinzufügen</a>
+            <a href="/profile" class="button button-dark">Profil</a>
           </div>';
         }
         ?>
     </header>
 
     <div class="container">
-        <h1 class="mb-1">Sorry, page doesn't exist!</h1>
+        <h1 class="mb-1">Entschuldigung, die Seite existiert nicht!</h1>
         <a href="/">
-            <button class="button button-bluish">Back to Home page</button>
+            <button class="button button-bluish">Zurück zur Startseite</button>
         </a>
     </div>
 </div>

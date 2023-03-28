@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles-cart.css"/>
     <link rel="shortcut icon" href="icon.svg" type="image/x-icon"/>
 
-    <title>Book Store My Cart</title>
+    <title>Book Store Mein Warenkorb</title>
 </head>
 <body>
 <div class="container">
@@ -24,9 +24,9 @@
         <ul class="navbar">
             <li><a href="/" class="navbar-link">Home</a></li>
             <li><a href="/shop" class="navbar-link">Shop</a></li>
-            <li><a href="/about" class="navbar-link">About</a></li>
+            <li><a href="/about" class="navbar-link">Wir über uns</a></li>
             <li>
-                <a href="/guestbook" class="navbar-link">Guestbook</a>
+                <a href="/guestbook" class="navbar-link">Gästebuch</a>
             </li>
         </ul>
 
@@ -41,26 +41,36 @@
         } else {
             echo /** @lang text */
             '<div class="navbar-buttons">
-            <a href="/cart" class="button button-dark mr-05">My cart</a>
-            <a href="/add-book" class="button button-dark mr-05">Add book</a>
-            <a href="/profile" class="button button-dark">Profile</a>
+            <a href="/cart" class="button button-dark mr-05">Mein Warenkorb</a>
+            <a href="/add-book" class="button button-dark mr-05">Buch hinzufügen</a>
+            <a href="/profile" class="button button-dark">Profil</a>
           </div>';
         }
         ?>
     </header>
 
     <div class="container">
-        <h1 class="mb-1">Your cart</h1>
+        <h1 class="mb-1">Warenkorb</h1>
+
+        <?php
+        session_start();
+        if (!isset($_SESSION["cart"]) or count($_SESSION["cart"]) === 0) {
+            echo /** @lang text */
+            "<h2 class=\"mb-15\">Ihr Warenkorb ist leer :(</h2>
+            <a href=\"/shop\" class=\"button button-bluish\"> Back to the shop
+            </a>";
+            die();
+        }
+        ?>
 
         <div class="row cart-wrapper">
             <div class="col">
 
                 <?php
-                session_start();
                 $_SESSION["total"] = 0;
                 for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
-                    $bookID = $_SESSION["cart"][$i];
-                    $connect = mysqli_connect('localhost', 'root', '', 'bookstore') or die('Connection Failure' . mysqli_connect_error());
+                    $bookID = $_SESSION["cart"][$i]->id;
+                    $connect = mysqli_connect('kssb.ch', 'db.user.g14f', 'dUs<8+SBrb', 'db.f1') or die('Connection Failure' . mysqli_connect_error());
                     $sql = /** @lang text */
                         "SELECT title, coverLink, price FROM books WHERE id='$bookID'";
                     $query = mysqli_query($connect, $sql);
@@ -68,14 +78,15 @@
 
                     $title = $row['title'];
                     $price = $row['price'];
-                    $_SESSION["total"] += $price;
+                    $_SESSION["total"] += $price * $_SESSION["cart"][$i]->count;
                     $coverLink = $row['coverLink'];
+                    $count = $_SESSION["cart"][$i]->count;
                     echo /** @lang text */
                     "<div class=\"card mb-15\">
                     <div class=\"card-body p-15\">
                         <div class=\"card-content text-center\">
                             <div class=\"col-16-16-16-16-16-16\">
-                                <img src=\"$coverLink\" class=\"card-img\" alt=\"Book cover image\">
+                                <img src=\"$coverLink\" class=\"card-img\" alt=\"Bild des Buchumschlags\">
                             </div>
                             <div class=\"col-16-16-16-16-16-16\">
                                 <div>
@@ -84,18 +95,19 @@
                             </div>
                             <div class=\"col-16-16-16-16-16-16\">
                                 <div>
-                                    <p class=\"cart-item-text\">Price: <b>$price CHF</b></p>
+                                    <p class=\"cart-item-text\">Preis: <b>$price CHF</b></p>
                                 </div>
                             </div>
                             <div class=\"col-16-16-16-16-16-16\">
                                 <div>
-                                    <a
-                                            href=\"/\"
-                                            class=\"delete-icon\"
-                                    >
-                                        <img src=\"delete-icon.svg\" width=\"48\" alt=\"Website icon\"/>
-                                    </a>
+                                    <p class=\"cart-item-text\">Insgesamt: <b>$count</b></p>
                                 </div>
+                            </div>
+                            <div class=\"col-16-16-16-16-16-16\">
+                                <form action=\"./scripts/remove-book-from-cart-script.php\" method=\"POST\">
+                                    <input type=\"hidden\" name=\"book_id\" value=\"$bookID\">
+                                    <input type=\"submit\" class=\"button button-reddish\" value=\"Löschen\"/>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -103,18 +115,16 @@
                 }
                 ?>
 
-
                 <div class="card mb-15">
                     <div class="card-body p-15">
                         <div class="float-right">
                             <div class="card-content text-center">
-                                <span class="cart-item-text mr-15">Order total: <b><?php echo $_SESSION["total"] ?> CHF</b></span>
+                                <span class="cart-item-text mr-15">Gesamtbetrag der Bestellung: <b><?php echo number_format($_SESSION["total"], 2); ?> CHF</b></span>
                                 <div>
-                                    <a href="/shop" class="button button-bluish button-large mr-05"> Back to the
-                                        shop
+                                    <a href="/shop" class="button button-bluish button-large mr-05"> Zurück zum shop
                                     </a>
                                     <a href="/checkout" class="button button-greenish button-large">
-                                        Checkout
+                                        Bestellung
                                     </a>
                                 </div>
                             </div>

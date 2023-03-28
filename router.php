@@ -2,36 +2,38 @@
 
 $request = $_SERVER['REQUEST_URI'];
 
+$topFolder = '';
+
 switch ($request) {
-    case '':
-    case '/' :
+    case $topFolder:
+    case $topFolder . '/home' :
         require __DIR__ . '/index.php';
         break;
-    case '/about' :
+    case $topFolder . '/about' :
         require __DIR__ . '/about.php';
         break;
-    case '/shop' :
+    case $topFolder . '/shop' :
         require __DIR__ . '/shop.php';
         break;
-    case '/login' :
+    case $topFolder . '/login' :
         require __DIR__ . '/login.php';
         break;
-    case '/register' :
+    case $topFolder . '/register' :
         require __DIR__ . '/register.php';
         break;
-    case '/profile' :
+    case $topFolder . '/profile' :
         require __DIR__ . '/profile.php';
         break;
-    case '/add-book' :
+    case $topFolder . '/add-book' :
         require __DIR__ . '/add-book.php';
         break;
-    case '/guestbook' :
+    case $topFolder . '/guestbook' :
         require __DIR__ . '/guestbook.php';
         break;
-    case '/cart' :
+    case $topFolder . '/cart' :
         require __DIR__ . '/cart.php';
         break;
-    case '/checkout' :
+    case $topFolder . '/checkout' :
         require __DIR__ . '/checkout.php';
         break;
     default:

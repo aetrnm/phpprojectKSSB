@@ -24,9 +24,9 @@
         <ul class="navbar">
             <li><a href="/" class="navbar-link">Home</a></li>
             <li><a href="/shop" class="navbar-link">Shop</a></li>
-            <li><a href="/about" class="navbar-link">About</a></li>
+            <li><a href="/about" class="navbar-link">Wir über uns</a></li>
             <li>
-                <a href="/guestbook" class="navbar-link">Guestbook</a>
+                <a href="/guestbook" class="navbar-link">Gästebuch</a>
             </li>
         </ul>
 
@@ -41,29 +41,29 @@
         } else {
             echo /** @lang text */
             '<div class="navbar-buttons">
-            <a href="/cart" class="button button-dark mr-05">My cart</a>
-            <a href="/add-book" class="button button-dark mr-05">Add book</a>
-            <a href="/profile" class="button button-dark">Profile</a>
+            <a href="/cart" class="button button-dark mr-05">Mein Warenkorb</a>
+            <a href="/add-book" class="button button-dark mr-05">Buch hinzufügen</a>
+            <a href="/profile" class="button button-dark">Profil</a>
           </div>';
         }
         ?>
     </header>
 
     <div class="container">
-        <h1 class="mb-1">Guestbook</h1>
+        <h1 class="mb-1">Gästebuch</h1>
 
         <?php
         if (!isset($_COOKIE['logged_in']) or !$_COOKIE['logged_in']) {
             echo /** @lang text */
-            '<h2>You must login or register to leave comments</h2>';
+            '<h2>Sie müssen sich anmelden oder registrieren, um Kommentare zu hinterlassen</h2>';
         } else {
             echo /** @lang text */
             '<form action="./scripts/guestbook-script.php" method="POST">
         <div class="mb-1">
           <label for="feedback" class="form-label">Feedback</label>
-          <textarea name="feedback" class="form-control" placeholder="Write here..." style="resize: vertical;" required></textarea>
+          <textarea name="feedback" class="form-control" placeholder="Hier schreiben..." style="resize: vertical;" required></textarea>
         </div>
-        <input type="submit" class="button button-bluish" value="Post" />
+        <input type="submit" class="button button-bluish" value="Posten" />
       </form>';
         }
         ?>
@@ -72,7 +72,7 @@
 
         <?php
 
-        $connect = mysqli_connect('localhost', 'root', '', 'bookstore') or die('Connection Failure' . mysqli_connect_error());
+        $connect = mysqli_connect('kssb.ch', 'db.user.g14f', 'dUs<8+SBrb', 'db.f1') or die('Connection Failure' . mysqli_connect_error());
         $sql = /** @lang text */
             "SELECT id, content, author, created FROM reviews ORDER BY id desc";
         $query = mysqli_query($connect, $sql);
@@ -88,7 +88,7 @@
           <div class=\"card-body\">
             <p>$content</p>
             <div class=\"card-footer\">
-              <p class=\"small\">By <b>$author</b></p>
+              <p class=\"small\">Von <b>$author</b></p>
               <p class=\"small ml-05\">$created</p>
             </div>
           </div>

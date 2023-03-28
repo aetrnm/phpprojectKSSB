@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* Authors Oleh Hnatkovskyi, Eline Ducrey, Raphael Eyer */
+
+#cookie-banner {
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+}
+
+.cookie-banner {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid transparent;
+    background-color: #ced4da;
+}
+
+.cookie-banner > a:visited {
+    color: LinkText;
+}

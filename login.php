@@ -25,11 +25,18 @@
         <ul class="navbar">
             <li><a href="/" class="navbar-link">Home</a></li>
             <li><a href="/shop" class="navbar-link">Shop</a></li>
-            <li><a href="/about" class="navbar-link">About</a></li>
+            <li><a href="/about" class="navbar-link">Wir über uns</a></li>
             <li>
-                <a href="/guestbook" class="navbar-link">Guestbook</a>
+                <a href="/guestbook" class="navbar-link">Gästebuch</a>
             </li>
         </ul>
+
+
+        <?php
+        if (isset($_COOKIE['logged_in']) or $_COOKIE['logged_in']) {
+            header('Location: /profile');
+        }
+        ?>
 
         <?php
         if (!isset($_COOKIE['logged_in']) or !$_COOKIE['logged_in']) {
@@ -42,9 +49,9 @@
         } else {
             echo /** @lang text */
             '<div class="navbar-buttons">
-            <a href="/cart" class="button button-dark mr-05">My cart</a>
-            <a href="/add-book" class="button button-dark mr-05">Add book</a>
-            <a href="/profile" class="button button-dark">Profile</a>
+            <a href="/cart" class="button button-dark mr-05">Mein Warenkorb</a>
+            <a href="/add-book" class="button button-dark mr-05">Buch hinzufügen</a>
+            <a href="/profile" class="button button-dark">Profil</a>
           </div>';
         }
         ?>
@@ -57,7 +64,7 @@
 
         <form action="./scripts/login-script.php" method="POST">
             <div class="mb-1">
-                <label for="email" class="form-label">Email address</label>
+                <label for="email" class="form-label">E-Mail Adresse</label>
                 <input
                         name="email"
                         id="email"
@@ -69,7 +76,7 @@
             </div>
 
             <div class="mb-1">
-                <label for="password" class="form-label">Password</label>
+                <label for="password" class="form-label">Passwort</label>
                 <input
                         name="password"
                         id="password"

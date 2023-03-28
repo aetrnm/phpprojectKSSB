@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* Authors Oleh Hnatkovskyi, Eline Ducrey, Raphael Eyer */
+
+body {
+    margin-bottom: 100px;
+}
+
+.bordered-form {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+}

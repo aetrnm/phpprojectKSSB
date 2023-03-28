@@ -25,9 +25,9 @@
         <ul class="navbar">
             <li><a href="/" class="navbar-link">Home</a></li>
             <li><a href="/shop" class="navbar-link">Shop</a></li>
-            <li><a href="/about" class="navbar-link">About</a></li>
+            <li><a href="/about" class="navbar-link">Wir über uns</a></li>
             <li>
-                <a href="/guestbook" class="navbar-link">Guestbook</a>
+                <a href="/guestbook" class="navbar-link">Gästebuch</a>
             </li>
         </ul>
 
@@ -41,23 +41,21 @@
           </div>';
         } else {
             echo /** @lang text */
-            '<div class="navbar-buttons">            
-            <a href="/cart" class="button button-dark mr-05">My cart</a>
-            <a href="/add-book" class="button button-dark mr-05">Add book</a>
-            <a href="/profile" class="button button-dark">Profile</a>
+            '<div class="navbar-buttons">
+            <a href="/cart" class="button button-dark mr-05">Mein Warenkorb</a>
+            <a href="/add-book" class="button button-dark mr-05">Buch hinzufügen</a>
+            <a href="/profile" class="button button-dark">Profil</a>
           </div>';
         }
         ?>
     </header>
 
     <div class="container">
-        <div>
-            <h1>Add book</h1>
-        </div>
+        <h1 class="mb-1">Buch hinzufügen</h1>
 
         <form action="scripts/add-book-script.php" method="POST">
             <div class="mb-1">
-                <label for="title" class="form-label">Title</label>
+                <label for="title" class="form-label">Titel</label>
                 <input
                         name="title"
                         id="title"
@@ -69,7 +67,7 @@
             </div>
 
             <div class="mb-1">
-                <label for="author" class="form-label">Author</label>
+                <label for="author" class="form-label">Autor</label>
                 <input
                         name="author"
                         id="author"
@@ -80,7 +78,7 @@
             </div>
 
             <div class="mb-1">
-                <label for="coverLink" class="form-label">Cover link</label>
+                <label for="coverLink" class="form-label">Link zum Umschlag</label>
                 <input
                         name="coverLink"
                         id="coverLink"
@@ -91,12 +89,12 @@
             </div>
 
             <div class="mb-1">
-                <label for="description" class="form-label">Description</label>
-                <textarea name="description" class="form-control" placeholder="Write here..." required></textarea>
+                <label for="description" class="form-label">Beschreibung</label>
+                <textarea name="description" class="form-control" placeholder="Hier schreiben..." required></textarea>
             </div>
 
             <div class="mb-1">
-                <label for="year" class="form-label">Year</label>
+                <label for="year" class="form-label">Jahr</label>
                 <input
                         name="year"
                         placeholder="1997"
@@ -113,7 +111,7 @@
             </div>
 
             <div>
-                <label for="price" class="form-label">Price</label>
+                <label for="price" class="form-label">Preis</label>
             </div>
             <div class="input-group mb-1">
                 <input type="number"
@@ -129,7 +127,7 @@
                        oninput="validity.valid || (value = this.previousValue)" required/>
             </div>
 
-            <input type="submit" class="button button-bluish" value="Add a book"/>
+            <input type="submit" class="button button-bluish" value="Buch hinzufügen"/>
         </form>
     </div>
 </body>
